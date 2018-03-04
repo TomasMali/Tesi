@@ -1,0 +1,142 @@
+
+
+
+Per la pianificazione dello stage è stato suddiviso il lavoro in diverse attività assegnando una durata temporale idonea, tenendo conto dei limiti di tempo previsti di massimo 320 ore. Lo stage è stato suddiviso nelle seguenti attività:
+
+- Studio introduttivo delle tecnologi principali coinvolte: in questo periodo dello stage è stato previsto lo studio e la configurazione di Eclipse con tutti i suoi plug-in necessari per avviare il progetto. Lo studio del tool DBeaver che sarà utilizzato per la gestione della base di dati e lo studio dell’architettura di base del Bot telegram dove si baserà l’applicativo.
+
+-Studio di fattibilità per la realizzazione del sistema: in questo periodo è stato analizzato uno studio di fattibilità per capire se sia effettivamente possibile fornire un sistema sempre a portata di mano, robusto e dinamico, capace di fornire le attività  presenti nell’applicativo preesistente.
+
+- Analisi dei requisiti: questa periodo rappresenta uno studio delle funzionalità che il software dovrebbe soddisfare per essere considerato funzionale dall’azienda. 
+
+- Progettazione del BI per effettuare query sul database postgres riportando i dati elaborati sull’interfaccia front-end:
+Questa attività si suddivide in due parti, la prima parte riguarda la strutturazione delle query, ovvero dare una struttura ben precisa di come i dati saranno interrogati dal database gestionale. Questo processo avviene attraverso le trasformazioni e aggiornamenti continui ETL dal database gestionale dell’azienda al nostro database postgres poiché non è consentito interrogare direttamente il database gestionale. 
+La seconda parte invece, riguarda l’attività di elaborazione dei dati ottenuti precedentemente dalla base dati costruendo (nella maggior parte dei casi) una tabella con colonne che rappresentano i dati di interesse. Tipicamente le tabelle vengono salvate sotto forma di documenti PDF e spedite all’interfaccia front-end dove l’utente interagisce. 
+
+-implementazione del sistema: in questo periodo si prevede l’acquisizione dati con successiva scrittura attraverso ETL e l’implementazione dei servizi back-end che si occuperanno a riportare in modo efficiente ed efficace i dati richiesti dall’utente. Un aspetto importante in questo processo è quello di tener conto dei tempi di risposta al lato client.
+
+- Test e sperimentazione del sistema:
+In questo periodo si prosegue con i test di correttezza e validazione del sistema e delle modifiche apportate per assicurare che rispettino le aspettative previste.
+
+-Documentazione : 
+Questo  processo comprende l’intera attività di documentazione effettuata durante il periodo di stage. Al contrario delle altre, questa è un’attività trasversale che riguarda in parte ogni altra attività e continua per l’intera durata dello stage.
+
+  
+******************************************************************************************
+
+Ambiente di lavoro 
+
+All’inizio dell’attività dello stage, dall’azienda Sanmarco Informatica S.p.A. ho avuto accesso a diverse risorse dell’azienda per permettermi di eseguire il lavoro al meglio. \\
+Le risorse condivise dall'azienda si suddividono in risorse hardware e risorse software, con i programmi messi a disposizione dall’azienda, e risorse informative, che comprendono i materiali di studio forniti inizialmente dall’azienda. 
+
+-Risorse Hardware 
+
+Il team NextBI che fa parte nell’ambiente di Ricerca e Sviluppo dell’azienda Sanmarco Informatica S.p.A. mi ha seguito durante lo stage rendendomi il lavoro più facile con la loro collaborazione e disponibilità di formazione. \\\\
+
+Mi è stato consegnato un PC aziendale già configurato con gli ambienti di lavoro aggiornati e alcuni software preinstallati per facilitare la fase di configurazione dell’ambiente. \\
+Oltre al PC aziendale, mi è stato consentito l’utilizzo di una macchina virtuale per effettuare dei test necessari, molto utile soprattutto per l’esecuzione di ETL che richiedono tempi di esecuzione molto lungati. 
+
+- Risorse software
+
+Ho avuto accesso al repository aziendale basato su ??? per gestire il versionamento. Il ?? è stato configurato con l’IDE eclipse. \\
+Il PC aziendale, inoltre aveva preinstallato la maggior parte dei software utili per effettuare il lavoro con versioni aggiornati. \\\\
+Inoltre mi è stato consentito installare anche nuovi software, tools o librerie se necessari, utili in certe circostanze.
+
+
+-Risorse informative 
+
+Mi sono state fornite diverse risorse informative tra cui diverse note e la relativa documentazione dell’applicativo preesistente con il quale si va ad integrare il progetto di stage. Questo favorisce l’apprendimento corretto del funzionamento dell’applicativo preesistente a fine di ammortizzare i tempi di progettazione. 
+
+
+******************************************************************************************
+
+
+Tecnologie usate 
+
+Sono varie le tecnologie usate durante lo stage. In questo paragrafo vengono descritte le diverse tecnologie usate con una breve presentazione. 
+
+
+
+
+Java: Java è un linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica, specificatamente progettato per essere il più possibile indipendente dalla piattaforma di esecuzione.\\
+La sua semplicità unita all'essere un linguaggio multi piattaforma lo rende molto usato e fa si che disponga di un'elevata quantità di librerie facilmente integrabili per le attività varie.\\
+Uno dei principi fondamentali del linguaggio Java è espresso dal motto WORA (write once, run anywhere, ossia "scrivi una volta, esegui ovunque"): il codice compilato che viene eseguito su una piattaforma non deve essere ricompilato per essere eseguito su una piattaforma diversa. Il prodotto della compilazione è infatti in un formato chiamato bytecode che può essere eseguito da una qualunque implementazione di un processore virtuale detto Java Virtual Machine. \\
+Al 2014, Java risulta essere uno dei linguaggi di programmazione più usati al mondo, specialmente per applicazioni client-server, con un numero di sviluppatori stimato intorno ai 9 milioni.
+
+
+
+
+XML XML (Extensible Markup Language) è un linguaggio di markup che definisce regole per la codifica di documenti in un formato comprensibile sia se letto da un umano che da una macchina. Lo scopo principale del formato è concentrato sulla semplicità, generalità e usabilità generale. Il formato permette quindi di definire tag personalizzati per i vari campi e mantenere un output che sia analizzabile in maniera automatica e manuale.Il formato è stato usato perchè già integrato all’interno del Plug-in MyBatis per definire le tabelle del database.
+
+
+
+
+PostgresSQL: 
+PostgreSQL è un completo DBMS (modello di base di dati) ad oggetti rilasciato con licenza libera (stile Licenza BSD).\\
+PostgreSQL è una reale alternativa sia rispetto ad altri prodotti liberi come MySQL, Firebird SQL che a quelli a codice chiuso come Oracle, IBM o DB2 ed offre caratteristiche uniche nel suo genere che lo pongono per alcuni aspetti all'avanguardia nel settore dei database.\\
+Ad esempio è stato utile nel progetto poichè ha permesso di collegare diversi database e farli comunicare tra loro con un’interfaccia facile da manovrare.
+PostgreSQL permette anche di definire nuovi tipi basati sui normali tipi di dato SQL, permettendo al database stesso di comprendere dati complessi. \\
+PostgreSQL, inoltre, permette l'ereditarietà dei tipi, uno dei principali concetti della programmazione orientata agli oggetti\\
+In PostgreSQL si può implementare la logica in uno dei molti linguaggi supportati.
+
+
+Notepad++  : Notepad++ è un text editor open source mirato alla modifica di codice sorgente. Il programma non dispone di tutte le capacità di un vero IDE ma presenta funzionalità più basilari come syntax highlighting (evidenziazione della sintassi) per 
+vari linguaggi tra cui anche Java, ricerca avanzata anche tramite espressioni regolari e la possibilità di aggiungere diversi plugin per espanderne le capacità.
+Notepad++ si è rivelato molto utile sia come semplice text editor ma anche per permettere rapide modifiche al codice grazie alla maggiore rapidità presentata rispetto all’Eclisse.
+
+
+
+
+
+Astah Community Astah Community è un programma per la modellazione di schemi UML (Unified Modeling Language) cioè rispettanti degli standard industriali per i modelli general-purpose per l’ingegneria del software.
+Il programma è stato scelto perchè ritenuto abbastanza semplice da usare per lo scopo necessario dopo esperienze precedenti ed è stato usato per creare alcuni diagrammi durante la fase di progettazione.
+
+
+Evernote Evernote è un programma multi piattaforma mirato alla creazione di note, la loro organizzazione, archiviazione e condivisione. Dispone sia di client installabile sia di un’interfaccia web e permette anche di condividere piccoli file.
+L’uso del programma è stato richiesto da parte del tutor ed è servito per parte del processo di documentazione. Su di esso sono stati infatti tenute cronologie, appunti e tracce delle decisioni che sono state fatte man mano durante il proseguimento dello stage.
+
+
+Visual Studio Code:
+Visual Studio Code è un editor di codice sorgente sviluppato da Microsoft compatibile cin diversi sistemi operativi.
+Visual Studio Code è basato su Electron, un framework con cui è possibile sviluppare applicazioni Node.js.\\
+Questo editor supporta vari linguaggi di programmazione, tra cui anche JavaScript e Java.
+Visual Studio Code permette installare varie estensioni, con la possibilità di fare ciò direttamente dal programma. \\
+Visual Studio è stato usato principalmente per facilitare lo sviluppo front-end grazie alle sue numerose estensioni disponibili facilmente instancabili. 
+
+
+Bot Telearma: Telegram è un servizio di messaggistica istantanea basato su cloud ed erogato senza fini di lucro dalla società Telegram LLC. I client ufficiali di Telegram sono distribuiti come software libero per diverse piattaforme. \\\\
+Da giugno 2015 Telegram ha introdotto una piattaforma per permettere, a sviluppatori terzi, di creare i Bot. I Bot sono degli account Telegram, gestiti da un programma, che offrono molteplici funzionalità con risposte immediate e completamente automatizzate. Grazie a questa funzionalità, il Bot telegrma è diventata la piattaforma dove si basa la maggior parte dell’applicativo sviluppato durante il periodo dello stage.
+
+
+FileZilla: FileZilla Client è un software libero multipiattaforma che permette il trasferimento di file in Rete attraverso il protocollo FTP. Il programma è disponibile per GNU/Linux, Microsoft Windows, e macOS. Tra i vari protocolli supportati, oltre all'FTP vi è l'SFTP, e l'FTP su SSL/TLS. 
+Il codice sorgente di FileZilla è disponibile sul sito SourceForge e, in alcuni casi, anche al momento dell'installazione del programma. Il progetto fu nominato Progetto del Mese nel novembre del 2003.\\
+Questo software è stato usato nel periodo dello stage per poter permettere dei trasferimenti di diversi file dal server dell’azienda Sanmarco Informatica a quello dei clienti dove è stato installato la demo. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
