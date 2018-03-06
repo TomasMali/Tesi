@@ -53,7 +53,7 @@ Mi sono state fornite diverse risorse informative tra cui diverse note e la rela
 
 Tecnologie usate 
 
-Sono varie le tecnologie usate durante lo stage. In questo paragrafo vengono descritte le diverse tecnologie usate con una breve presentazione. 
+Sono varie le tecnologie usate durante lo stage. In questo paragrafo vengono descritte le diverse tecnologie usate con una breve presentazione. \\\\
 
 
 
