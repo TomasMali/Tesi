@@ -3,30 +3,70 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Descrizione dello stage}
-\label{cap:descrizione-stage}
+\chapter{Definizione del problema}
+\label{cap:definizione-problema}
 %**************************************************************
 
 \intro{Breve introduzione al capitolo}\\
 
 %**************************************************************
-\section{Introduzione al progetto}
-
-%**************************************************************
-\section{Analisi preventiva dei rischi}
-
-Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
-Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte a tali rischi.\\
-
-\begin{risk}{Performance del simulatore hardware}
-    \riskdescription{le performance del simulatore hardware e la comunicazione con questo potrebbero risultare lenti o non abbastanza buoni da causare il fallimento dei test}
-    \risksolution{coinvolgimento del responsabile a capo del progetto relativo il simulatore hardware}
-    \label{risk:hardware-simulator} 
-\end{risk}
-
-%**************************************************************
-\section{Requisiti e obiettivi}
 
 
 %**************************************************************
-\section{Pianificazione}
+\section{Sempre più portabilità}
+
+
+Quando le attività da gestire in un'azienda diventano tante, si ha la necessità di tenerle sotto controllo molte volte durante la giornata e questo purtroppo richiede quasi sempre un PC o tablet per poterci accedere attraverso una pagina web. Questo problema lo ritroviamo in tanti altri sistemi dove si richiede l'utilizzo di un'interfaccia web per interagire. Eliminando l'interfaccia web sostituendola con un applicazione installabile a volte non è la soluzione migliore perché questo significa dover fornire una funzionalità a tutte le piattaforme e sistemi operativi disponibili altrimenti si  limiterebbe il supporto delle funzionalità solo su una specifica piattaforma o sistema operativo. Bisognerebbe quindi trovare un modo per rendere l'applicativo un'applicazione portabile, cioè senza il bisogno dell'installazione e questo problema viene affrontato nel prossimo capito.
+
+\section{Il problema della notificazione}
+
+Nell'applicativo preesistente non è presente  la possibilità di notificare l'utente in tempo reale quando succede qualcosa su un certo evento programmato.  Questa estensione sarebbe molto apprezzata nel nuovo applicativo. Fornire un sistema di notificazione significa creare degli eventi e restare in ascolto su di essi finché non succeda qualcosa per scaturire l'evento. \\
+
+Negli ultimi tempi di internet, queste funzionalità hanno preso piede in diversi ambiti. Oggigiorno grazie alle “Notification API” siamo in grado di inviare delle notifiche sfruttando il sistema operativo che sta usando il nostro utente. Possiamo creare ad esempio una chat online, come Slack, e sfruttare le notifiche per avvertire l'utente che ha ricevuto un nuovo task da portare al termine, oppure possiamo creare all'interno della nostra applicazione web un ToDo List, come “Asana”, per ricordare all'utente che si sta avvicinando la scadenza di un determinato task.\\
+Questo tipo di notifiche sono molto interessanti per diverse tipologie di applicazioni web ma il primo problema da affrontare con le applicazioni web è la compatibilità delle “Notifications API”  con i vecchi  browser essendo questa tecnologia relativamente recente. Anche questo problema sarà affrontato nel prossimo capitolo.
+
+
+\section{L'aggiornamento in real time}
+Le aziende che si occupano di gestionale si trovano quasi sempre a gestire dati molto importanti e sensibili di altre aziende. Per questo motivo il software gestionale limita l'accesso e modifica dei dati nel database secondo la propria politica di gestione. Per poter interfacciarsi con questo problema bisogna trovare un sistema che faccia una specie di "backup" delle tabelle di interesse del gestionale sul quale effettuarci le query e successivamente portarle nel database gestionale di origine. A questo punto si presenta due problemi fondamentali: il primo problema è quello della gestione della mutua esclusione del dato, ovvero cosa succede se due utenti modificano lo stesso campo nello stesso istante di tempo? Come rispecchiare queste modifiche nel database di origine? Il secondo problema è quello di capire ogni quanto tempo bisogna fare l'aggiornamento delle tabelle dal database gestione. Quest'ultimo problema influisce direttamente sulle performance dell'applicativo poichè, come specificato sopra, i dati devono essere aggiornati il più possibile nel momento in cui si effettua una richiesta dall'interfaccia utente. Ma dall'altra parte, aggiornando le tabelle ogni secondo richiederebbe tanta velocità di calcolo. Bisogna dunque trovare un compromesso ragionevole. 
+
+\section{Trasformazione dei dati}
+Un altro problema da affrontare è quello di effettuare delle trasformazioni dei dati in altri formati. Spesso nei sistemi gestionali è richiesta una rappresentazione dei dati dal database in diversi formati come ad esempio in XML, Doc, PDF eccetera.  \\
+Come descritto nel prossimo capito questo problema vine affrontato con il sistema ETL, più specificamente verrà usato il software di PDI (Pentaho Data Integration) chiamto Kettle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
