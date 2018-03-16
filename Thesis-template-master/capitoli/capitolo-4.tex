@@ -3,46 +3,183 @@
 % !TEX root = ../tesi.tex
 
 %**************************************************************
-\chapter{Analisi del problema e soluzione}
-\label{cap:analisi-problema}
+\chapter{Analisi dei requisiti}
+\label{cap:analisi-requisiti}
 %**************************************************************
 
 \intro{Breve introduzione al capitolo}\\
 
 
-\section{Studio iniziale del problema di portabilità}
-Dopo una attenta analisi per quanto riguarda il problema della portabilità dell'applicativo, è stato deciso sin dal primo tentativo di affiancare l'interfacci web esistente con una mobile. Questa decisione si basa sul fatto che avere un'interfaccia mobile è sempre comodo da usare e portare con se, dato che al giorno d'oggi, tutti possediamo uno smartphone personale sempre con noi. E' stata esclusa subito invece la possibilità di creare un'applicazione mobile da zero. Questo perchè come descritto nel primo capitolo si cerca di avere una soluzione capace di fornire un'applicativo dinamico, di facile utilizzo, che includa un sistema di notificazione per gli eventi preimpostati, che non abbia bisogno di essere installato e sopratutto che non abbia nessun tipo di dipendenza dal sistema operativo o browser.\\ 
- In secondo luogo è stata analizzata la possibilità di utilizzare una piattaforma già pronta open source che implementi un modulo di messaggistica chat, capace di ospitare il nostro sistema di notificazione attraverso l'invio di messaggi, evitando cosi di realizzare uno tutto da zero.\\\\
-Navigando su internet si trovano decine di chat application open source che possono andar bene al caso nosto. Tra le più utilizzate sono: \\\\
+\section{Casi d'uso}
 
+In questa sezione vengono trattati i casi d'uso riguardanti l'interazione dell'utente con l'interfaccia visiva dell'applicativo. Con i casi d'uso si vuole mostrare una panoramica delle funzionalità dell'applicativo. Vengono inseriti gli Use Cases DiagramG e la loro descrizione secondo le specifiche UML2.0G. L’attore principale è sempre l'utente generico autenticato oppure l'utente  amministrativo autenticato. \\\\
+
+ Pagina iniziale \\\\
+
+foto\\\\
+
+\textbf{Attori primari:}   Utente autenticato\\
+
+
+\textbf{Descrizione:} L’utente generico può visualizzare la lista degli ordini, può visualizzare le scadenze, lo spedito, la disponibilità degli ordini, gli inevasi e lo scadenzario. L’utente amministratore (che è una generalizzazione dell’utente generico) può gestire gli utenti, attivando una licenza, rimuovere gli utenti, associare un utente con un’account B2B e rimuovere un’associazione. \\
+
+\textbf{Precondizione:}  Il sistema funziona correttamente e visualizza la pagina principale correttamente. \\
+
+\textbf{Postcondizione:} Il sistema ha ricevuto uno dei comandi eseguiti dall’utente ed è stato scaricato il file che visualizza le informazioni richieste dall’utente oppure è stato aperta la pagina dell’amministrazione degli utenti nel caso dell’utente amministratore.\\
+
+
+\textbf{Flusso base degli eventi:}   
 \begin{itemize}
-\item Slack 
-\item RocketChat
-\item IRC
-\item Let's Chat
-\item Telegram 
-\item ecc...
+
+
+\item L’attore visualizza la lista del tipo di ordine da selezionare (UC1);
+\item L’attore può visualizzare la lista del tipo di scadenze da selezionare (UC2);
+\item L’attore può visualizzare la lista del tipo di spedito da selezionare (UC3);
+\item L’attore può scaricare il documento aggiornato  del report di Disponibilità (UC4);
+\item L’attore può scaricare il documento aggiornato del report Inevaso (UC5);
+\item L’attore può visualizzare la lista del tipo di scadenzario da selezionare (UC6);
+\item L’attore (utente amministratore) può visualizzare la lista dei comandi per gestire l’associazione tra utenti, l’eliminazione e la gestione delle licenze (UC7);
+
 \end{itemize}
 
 
-\subsection{Scelta della Chat Application}
-Valutando le funzionalità offerte dalla lista delle Chat Application è stato scelto Telegram come servizio di messaggistica di appoggio. Recentemente Telegram ha introdotto una nuova piattaforma per permettere agli sviluppatori di creare i Bot. I Bot sono degli account Telegram, gestiti da un programma, che offrono molteplici funzionalità con risposte immediate e completamente automatizzate. \\\\
-Uno dei motivi principali per cui è stata presa questa decisione è la guida completa e la dettagliata documentazione del codice sorgente fornita dai membri Telegram. Grazie ai numerosi sviluppatori e membri attivi telegram, è sempre più facile trovare una risposta ai problemi nei appositi forum oppure contattando direttamente i loro membri.\\ Telegram supporta lo sviluppo con la maggior parte dei linguaggi di programmazione tradizionali (non solo OOP), tra i quali Java. Questo ha reso ancora più facile la nostra scelta nel progetto. \\
 
-qui verrano aggiunti altri dettagli della scelta telegram .....
+Amministrazioni utenti \\\\
+
+foto\\\\
+
+\textbf{Attori primari:}   Utente amministratore autenticato\\
 
 
-\section{Il problema dell'aggiornamento dei dati in real time}
+\textbf{Descrizione:} L’utente amministratore può visualizzare la lista degli utenti che risultano attivi con una licenza, visualizzare gli utenti che sono in attesa ad essere registrati nel sistema (cioè gli utenti che hanno fatto richiesta per essere registrati con una licenza ma che non sono ancora accettati da un amministratore). L’utente amministratore può eliminare un utente generico può gestire la licenza, inserendo una nuova oppure visualizzare lo stato di quelle attive. Infine l’utente amministratore può effettuare un’associazione tra l’utente B2B ed il suo account telegram oppure può eliminare un’associazione precedentemente creata. \\
 
-Per ovviare questo problema è stato deciso di realizzare degli script i quali fanno partire dei processi per aggiornare le tabelle di interesse sistematicamente in un orario prefisato. L'applicazione Kettle fornito dall'impresa Pentaho, è stato un tool programmabile molto utile nel gestire i processi di lettura ed aggiornamento delle tabelle. In queto modo i dati saranno aggiornati nel database dell'applicativo e poichè le operazione effettuate dall'utente sono prevalentemente di lettura (dall'interfaccia web invece non è cosi), il problema della mutua esclusione  non si presenta in questo scenario. 
+\textbf{Precondizione:}   Il sistema funziona correttamente e visualizza la pagina all’amministrazione utenti correttamente. \\
 
-\section{L'associazione B2B - Telegram}
-Come vedremo nella progettazione le operazioni che andranno a scrivere sul database sono quelle che si occupano di creare un'associazione tra l'utente B2B e quello dell'account Telegram. Il database sul quale verrano memorizzati gli account degli utenti è diverso da quello che conterrà i dati del B2B. Questa separazione servirà per garantire un'identificazione univoca degli utenti B2B con quelli registrati con il Bot Telegram. Inoltre verrà utilizzato lo stesso database che si occupa della gestione degli utenti, per gestire anche le licenze e la loro validità per ciascun utente. In questo caso l'unico utente che modificherà e attiverà le license sarà l'utente amministratore per cui siamo sicuri che non si presenterà nessun problema di sincronizzazione e modifiche multiple da parte di più utenti. 
+\textbf{Postcondizione:}  L’utente amministratore è stato in grado ad effettuare correttamente  un’operazione da lui voluta nella pagina di gestione utenti.\\
 
-\section{La  soluzione scelta per la trasformazione dei dati}
 
-Per quanto riguarda le trasformazioni ETL dei dati è stato scelto di utilizzare il software Kettle il quale è un software molto affidabile e presenta un'interfaccia molto intuitiva. Grazie a Kettle è stato possibile estrarre i dati dalla sorgentie gestionale ed elaborarli ulteriormente facendoli subire le trasformazioni desiderate. Le più comuni trasformazioni sono state: la normalizzazione dei dati, l'eliminazione dei duplicati, la derivazione dei nuovi calcolati, il raggruppamento degli stessi selezionando quelli di interesse eccetera. \\
+\textbf{Flusso base degli eventi:} 
 
-........
+\begin{itemize}
+
+\item L’utente amministratore visualizza la lista degli utenti in attesa ad essere registrati (UC7.1);
+\item L’utente amministrativo visualizza la lista degli utenti registrati correttamente con una licenza valida (UC7.2);
+\item L’utente amministrativo elimina un utente rimuovendo anche la relativa licenza (UC7.3);
+\item L’utente amministrativo associa un utente B2B con il suo account telegram (UC7.4);
+\item L’utente amministrativo rimuove l’associazione di un utente B2B con l’account telegram (UC7.5);
+\item L’utente visualizza la lista dei comandi per l’amministrazione di un utente generico (UC7.6);
+
+
+\end{itemize}  
+
+
+
+Ordini del giorni \\\\
+
+foto\\\\
+
+\textbf{Attori primari:} Utente generico ed utente amministratore autenticati
+\\
+
+
+\textbf{Descrizione:} L’utente (generico oppure amministratore) può scegliere di visualizzare il report “ordinato del giorno”, “ordinato di inizio mese” o “ordinato residuo”. \\
+
+\textbf{Precondizione:} Il sistema funziona correttamente e visualizza la pagina per poter scaricare gli ordinati correttamente. \\
+
+\textbf{Postcondizione:}  L’utente generico oppure amministratore è stato in grado di visualizzare correttamente  un “ordinato” da lui voluto nella pagina di visualizzazione ordini. \\
+
+
+\textbf{Flusso base degli eventi:} 
+
+\begin{itemize}
+
+\item L’utente visualizza i valori inerente all’ordinato del giorno (UC1.1);
+\item L’utente visualizza i valori inerente all’ordinato di inizio mese (UC1.2);
+\item L’utente visualizza i valori inerente all’ordinato residuo (UC1.3);
+
+\end{itemize}
+
+
+
+Scadenze \\\\
+
+foto\\\\
+
+\textbf{Attori primari:} Utente generico ed utente amministratore autenticati
+\\
+
+
+\textbf{Descrizione:}  L’utente (generico oppure amministratore) può scegliere di visualizzare l’ammontare delle “scadenze totali”, dello “scaduto” oppure “scadere”.  \\
+
+\textbf{Precondizione:} Il sistema funziona correttamente e visualizza la pagina per poter visualizzare le scadenze correttamente. \\
+
+\textbf{Postcondizione:} L’utente generico oppure amministratore è stato in grado di visualizzare correttamente le scadenze da lui volute nella pagina di visualizzazione scadenze. \\
+
+
+\textbf{Flusso base degli eventi:} 
+
+\begin{itemize}
+
+\item L’utente visualizza i valori inerenti alle scadenze totali (UC2.1);
+\item L’utente visualizza i valori inerenti allo scaduto (UC2.2);
+\item L’utente visualizza i valori inerenti allo scadere (UC2.3);
+
+
+\end{itemize}
+
+
+
+
+Gli spediti \\\\
+
+foto\\\\
+
+\textbf{Attori primari:} Utente generico ed utente amministratore autenticati
+\\
+
+
+\textbf{Descrizione:}  L’utente (generico oppure amministratore) può scegliere di visualizzare l’ammontare dello “spedito oggi”, dello “spedito ieri” oppure “spedito questo mese”.  \\
+
+\textbf{Precondizione:} Il sistema funziona correttamente e visualizza la pagina per poter visualizzare gli spediti correttamente. \\
+
+\textbf{Postcondizione:} L’utente generico oppure amministratore è stato in grado di visualizzare correttamente gli spediti da lui volute nella pagina di visualizzazione scadenze.  \\
+
+
+\textbf{Flusso base degli eventi:} 
+
+\begin{itemize}
+
+\item L’utente visualizza i valori inerenti allo spedito oggi (UC3.1);
+\item L’utente visualizza i valori inerenti allo spedito ieri (UC3.2);
+\item L’utente visualizza i valori inerenti allo spedito questo mese (UC3.3);
+
+\end{itemize}
+
+
+Scadenzario \\\\
+
+foto\\\\
+
+\textbf{Attori primari:} Utente generico ed utente amministratore autenticati
+\\
+
+
+\textbf{Descrizione:}   L’utente (generico oppure amministratore) può scegliere di scaricare il documento che rappresenta il report di “scaduti/a scadere”, “scaduti” oppure “a scadere”.   \\
+
+\textbf{Precondizione:}  Il sistema funziona correttamente e visualizza la pagina per poter scaricare lo scadenzario correttamente. \\
+
+\textbf{Postcondizione:} L’utente generico oppure amministratore è stato in grado di scaricare correttamente lo scadenzario da lui volute nella pagina di visualizzazione scadenzario.  \\
+
+
+\textbf{Flusso base degli eventi:} 
+
+\begin{itemize}
+
+\item L’utente scarica il report inerente agli scaduti/a scadere (UC6.1);
+\item L’utente scarica il report inerente agli scaduti  (UC6.2);
+\item L’utente scarica il report inerente allo scadere (UC6.3);
+
+
+\end{itemize}
 
 
