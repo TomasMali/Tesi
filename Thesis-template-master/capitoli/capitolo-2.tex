@@ -12,7 +12,7 @@
 %**************************************************************
 \section{Il progetto di stage}
 
-L'azienda Sanmarco Informatica S.p.A. fornisce un servizio di BI per la gestione dei processi di budget. La soluzione attuale si basa su un applicativo web B2B. Essendo tale applicativo realizzato con tecnologie poco recenti si è mirato quindi a migliorarlo, aggiornando le tecnologie, mantenendo però la gran parte della struttura esistente invariata.  A questo scopo il team NextBI si è preso l'impegnativa di estenderlo, migliornado le funzionalità esistenti e aggiungendo delle altre nuove, dando il nome al progetto, appunto, Budget. In base alla pianificazione, la dimensione di questo progetto risulta molto grande (stimato il rilascio nell'ottobre 2019). Da questa stima si deduce infatti che l'interesse del progetto non si limita solo all'aggiornamento della versione dell'applicativo esistente, ma anche integrando man mano nel tempo migliorie e servizi innovativi. Il mio progetto si inserisce quindi all'interno del progetto budget con lo scopo di realizzare un sistema portabile e flessibile per la gestione e il monitoraggio di alcuni processi aziendali come sono ad esempio: gli ordini degli articoli giornalieri (settimanali o mensili), la disponibilità, lo spedito, le scadenze, gli inevasi ecettera. Si include anche la possibilità di notifica quando un nuovo report si aggiunge o viene modificato. 
+L'azienda Sanmarco Informatica S.p.A. fornisce un servizio di BI per la gestione dei processi di budget. La soluzione attuale si basa su un applicativo web B2B. Essendo tale applicativo realizzato con tecnologie poco recenti si è mirato quindi a migliorarlo, aggiornando le tecnologie, mantenendo però la gran parte della struttura esistente invariata.  A questo scopo il team NextBI si è preso l'impegnativa di estenderlo, migliornado le funzionalità esistenti e aggiungendo delle altre nuove, dando il nome al progetto, appunto, Budget. In base alla pianificazione, la dimensione di questo progetto risulta molto grande (stimato il rilascio nell'ottobre 2018). Da questa stima si deduce infatti che l'interesse del progetto non si limita solo all'aggiornamento della versione dell'applicativo esistente, ma bensì integrando man mano nel tempo migliorie e servizi innovativi. Il mio progetto si inserisce quindi all'interno del progetto budget con lo scopo di realizzare un sistema portabile e flessibile per la gestione e il monitoraggio di alcuni processi aziendali come sono ad esempio: gli ordini degli articoli giornalieri (settimanali o mensili), la disponibilità, lo spedito, le scadenze, gli inevasi ecettera. Si include anche la possibilità di notifica quando un nuovo report si aggiunge o viene modificato. 
 \\ \\
 Il problema che sorge è quindi la mancanza di un sistema portatile e di facile installazione che interroghi il database gestionale, il quale ,in tempo reale fornisca una paginazione aggiornato dei dati d'interesse. Il tutto dovrà essere integrato facilmente nel progetto Budget che si sta sviluppando in parallelo. E' stato inoltre stabilito che il sistema dovesse anche tener conto della gestione di profilazione per utente. Lo scopo finale è quindi di avere un sistema robusto e di facile utilizzo che diminuisca i costi di mantenimento del codice. Questo perchè da un'analisi fatta dall'azienda stessa negli ultimi anni i costi di mantenimento dell'applicativo sono  stati significanti. Tutto ciò è dovuto dal fatto che l'installazione e il funzionamento dell'applicativo preesistente doveva essere garantito su una larga gamma di sistemi operativi e browser.
 \\ \\
@@ -40,14 +40,14 @@ prefissati nel progetto di stage ma che completerebbero maggiormente il risultat
 
 Qui ci va una tabella con la descrizione degli obiettivi ............ \\\\
 
-Nel capito Conclusioni al paragrafo (?) "Raggiungimento degli obiettivi", viene presentato il livello di soddisfacimento degli obiettivi a consuntivo.
+%Nel capito Conclusioni al paragrafo (?) "Raggiungimento degli obiettivi", viene presentato il livello di soddisfacimento degli obiettivi a consuntivo.
 
 
 
 \section{Vincoli}
 Per l'esecuzione dello stage presso Sanmarco Informatica S.p.A sono stati fissati alcuni vincoli: \\\\
 
-Per facilitare l'integrazione nel progetto Budget, l'applicativo è stato richiesto di essere sviluppato in Java mantenendo così una certa compatibilità con la piattaforma di base del progetto Budget. Un altro vincolo è quello di usare il sistema ETL (Extract, Transform, Load) per estrarre e trasformare i dati dal database gestionale in un altro database che comunicherà direttamente con il nostro applicativo. Questo vincolo è dovuto dal fatto che non è consentito portare delle modifiche direttamente al database gestionale dell'azienda.
+Per facilitare l'integrazione nel progetto Budget, l'applicativo è stato richiesto di essere sviluppato in Java mantenendo così una certa compatibilità con la piattaforma di base del progetto Budget. Un altro vincolo è quello di usare il sistema ETL (Extract, Transform, Load) per estrarre e trasformare i dati dal database gestionale in un altro database che comunicherà direttamente con il nostro applicativo. Questo vincolo è dovuto dal fatto che non è consentito effettuare delle modifiche direttamente al database gestionale dell'azienda.
 Un altro criterio da rispettare è stato l'uso  dell'IDE Eclipse Neon per la scrittura e la compilazione del codice sorgente. E' stato inoltre richiesto di usare RTC (Rational Team Concert), integrato nell'IDE eclipse per gestire la parte di versionamento del codice. Il tutor aziendale sempre attraverso l'RTC si impegnava ad assegnare gli sprint in corso e da concludere durante il progetto. Per la parte di pianificazione e gestione delle attività è stato richiesto di usare Asana.  \\
 
 \section{Pianificazione}
@@ -76,11 +76,11 @@ In questo periodo si prosegue con i test di correttezza e validazione del sistem
 Questo  processo comprende l'intera attività di documentazione effettuata durante il periodo di stage. Al contrario delle altre, questa è un'attività trasversale che riguarda in parte ogni altra attività e continua per l'intera durata dello stage. 
 \end{itemize}
 
-\subsection{Tabella della pianificazione}
+%\subsection{Tabella della pianificazione}
 
 
 
-Qui ci va la tabella della pianificazione........
+%Qui ci va la tabella della pianificazione........
 
 
 \section{Ambiente di lavoro}
@@ -147,7 +147,7 @@ Visual Studio è stato usato principalmente per facilitare lo sviluppo front-end
 Da giugno 2015 Telegram ha introdotto una piattaforma per permettere, a sviluppatori terzi, di creare i Bot. I Bot sono degli account Telegram, gestiti da un programma, che offrono molteplici funzionalità con risposte immediate e completamente automatizzate. Grazie a questa funzionalità, il Bot telegrma è diventata la piattaforma dove si basa la maggior parte dell’applicativo sviluppato durante il periodo dello stage.
 
 \item \textbf{FileZilla :} FileZilla Client è un software libero multipiattaforma che permette il trasferimento di file in Rete attraverso il protocollo FTP. Il programma è disponibile per GNU/Linux, Microsoft Windows, e macOS. Tra i vari protocolli supportati, oltre all'FTP vi è l'SFTP, e l'FTP su SSL/TLS. 
-%Il codice sorgente di FileZilla è disponibile sul sito SourceForge e, in alcuni casi, anche al momento dell'installazione del programma. Il progetto fu nominato Progetto del Mese nel novembre del 2003.\\
+Il codice sorgente di FileZilla è disponibile sul sito SourceForge e, in alcuni casi, anche al momento dell'installazione del programma. Il progetto fu nominato Progetto del Mese nel novembre del 2003.\\
 Questo software è stato usato nel periodo dello stage per poter permettere dei trasferimenti di diversi file dal server dell’azienda Sanmarco Informatica a quello dei clienti dove è stato installato la demo. \\
 
 Altre tecnologie ....\\
