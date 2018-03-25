@@ -7,19 +7,25 @@
 \label{cap:analisi-requisiti}
 %**************************************************************
 
-\intro{Breve introduzione al capitolo}\\
+\intro{Il quarto capitolo descrive in maggiore dettaglio il lavoro eseguito durante lo stage, le varie soluzioni che sono state testate e come queste sono state scelte e composte per progettare la soluzione ideale.}\\
+
+
+
+
 
 
 \section{Casi d'uso}
 
-In questa sezione vengono trattati i casi d'uso riguardanti l'interazione dell'utente con l'interfaccia visiva dell'applicativo. Con i casi d'uso si vuole mostrare una panoramica delle funzionalità dell'applicativo. Vengono inseriti gli Use Cases DiagramG e la loro descrizione secondo le specifiche UML2.0G. L’attore principale è sempre l'utente generico autenticato oppure l'utente  amministrativo autenticato. \\\\
- Pagina iniziale \\
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.0\columnwidth]{usecase/UseCase_Diagram0} 
+In questa sezione vengono trattati i casi d'uso riguardanti l'interazione dell'utente con l'interfaccia visiva dell'applicativo. Con i casi d'uso si vuole mostrare una panoramica delle funzionalità dell'applicativo. Vengono inseriti gli Use Cases DiagramG e la loro descrizione secondo le specifiche UML2.0G. L’attore principale è sempre l'utente generico autenticato oppure l'utente  amministrativo autenticato.
+\begin{figure}[h!]
+\subsection{Pagina iniziale } 
+   \begin{center}
+    \includegraphics[scale=0.28]{usecase/UseCase_Diagram0} 
     \caption{Use Case - UC0: Scenario principale}
-\end{figure} 
-\\
+    \end{center}
+
+
+
 \textbf{Attori primari:}   Utente autenticato\\
 
 \textbf{Descrizione:} L’utente generico può visualizzare la lista degli ordini, può visualizzare le scadenze, lo spedito, la disponibilità degli ordini, gli inevasi e lo scadenzario. L’utente amministratore (che è una generalizzazione dell’utente generico) può gestire gli utenti, attivando una licenza, rimuovere gli utenti, associare un utente con un’account B2B e rimuovere un’associazione. \\
@@ -31,8 +37,6 @@ In questa sezione vengono trattati i casi d'uso riguardanti l'interazione dell'u
 
 \textbf{Flusso base degli eventi:}   
 \begin{itemize}
-
-
 \item L’attore visualizza la lista del tipo di ordine da selezionare (UC1);
 \item L’attore può visualizzare la lista del tipo di scadenze da selezionare (UC2);
 \item L’attore può visualizzare la lista del tipo di spedito da selezionare (UC3);
@@ -40,22 +44,21 @@ In questa sezione vengono trattati i casi d'uso riguardanti l'interazione dell'u
 \item L’attore può scaricare il documento aggiornato del report Inevaso (UC5);
 \item L’attore può visualizzare la lista del tipo di scadenzario da selezionare (UC6);
 \item L’attore (utente amministratore) può visualizzare la lista dei comandi per gestire l’associazione tra utenti, l’eliminazione e la gestione delle licenze (UC7);
-
 \end{itemize}
+\end{figure}
 
 
 
-Amministrazioni utenti \\\\
 
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.0\columnwidth]{usecase/UseCase_Diagram1} 
-    \caption{Use Case - UC0: Scenario principale}
-\end{figure} 
-
-\textbf{Attori primari:}   Utente amministratore autenticato\\
-
-
+\begin{figure}[h!]
+\subsection{Amministrazioni utenti}
+   \begin{center}
+    \includegraphics[scale=0.32]{usecase/UseCase_Diagram1} 
+    \caption{Use Case - UC7: Area amministrativa}
+    \end{center}
+    
+    \textbf{Attori primari:}   Utente amministratore autenticato\\
+    
 \textbf{Descrizione:} L’utente amministratore può visualizzare la lista degli utenti che risultano attivi con una licenza, visualizzare gli utenti che sono in attesa ad essere registrati nel sistema (cioè gli utenti che hanno fatto richiesta per essere registrati con una licenza ma che non sono ancora accettati da un amministratore). L’utente amministratore può eliminare un utente generico può gestire la licenza, inserendo una nuova oppure visualizzare lo stato di quelle attive. Infine l’utente amministratore può effettuare un’associazione tra l’utente B2B ed il suo account telegram oppure può eliminare un’associazione precedentemente creata. \\
 
 \textbf{Precondizione:}   Il sistema funziona correttamente e visualizza la pagina all’amministrazione utenti correttamente. \\
@@ -73,19 +76,24 @@ Amministrazioni utenti \\\\
 \item L’utente amministrativo associa un utente B2B con il suo account telegram (UC7.4);
 \item L’utente amministrativo rimuove l’associazione di un utente B2B con l’account telegram (UC7.5);
 \item L’utente visualizza la lista dei comandi per l’amministrazione di un utente generico (UC7.6);
-
-
 \end{itemize}  
 
+\end{figure}
 
 
-Ordini del giorni \\\\
 
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.0\columnwidth]{usecase/UseCase_Diagram2} 
-    \caption{Use Case - UC0: Scenario principale}
-\end{figure} 
+
+
+
+\begin{figure}[h!]
+\subsection{Ordini del giorni}
+
+   \begin{center}
+    \includegraphics[scale=0.35]{usecase/UseCase_Diagram2} 
+    \caption{Use Case - UC1: Ordini del giorno}
+    \end{center}
+
+
 
 \textbf{Attori primari:} Utente generico ed utente amministratore autenticati
 \\
@@ -101,28 +109,26 @@ Ordini del giorni \\\\
 \textbf{Flusso base degli eventi:} 
 
 \begin{itemize}
-
 \item L’utente visualizza i valori inerente all’ordinato del giorno (UC1.1);
 \item L’utente visualizza i valori inerente all’ordinato di inizio mese (UC1.2);
 \item L’utente visualizza i valori inerente all’ordinato residuo (UC1.3);
-
 \end{itemize}
-
-
-
-Scadenze \\\\
-
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.0\columnwidth]{usecase/UseCase_Diagram3} 
-    \caption{Use Case - UC0: Scenario principale}
 \end{figure} 
 
 
+
+
+
+
+\begin{figure}[h!]
+\subsection{Scadenze}
+   \begin{center}
+    \includegraphics[scale=0.35]{usecase/UseCase_Diagram3} 
+    \caption{Use Case - UC2: Scadenze}
+    \end{center}
+
 \textbf{Attori primari:} Utente generico ed utente amministratore autenticati
 \\
-
-
 \textbf{Descrizione:}  L’utente (generico oppure amministratore) può scegliere di visualizzare l’ammontare delle “scadenze totali”, dello “scaduto” oppure “scadere”.  \\
 
 \textbf{Precondizione:} Il sistema funziona correttamente e visualizza la pagina per poter visualizzare le scadenze correttamente. \\
@@ -133,29 +139,23 @@ Scadenze \\\\
 \textbf{Flusso base degli eventi:} 
 
 \begin{itemize}
-
 \item L’utente visualizza i valori inerenti alle scadenze totali (UC2.1);
 \item L’utente visualizza i valori inerenti allo scaduto (UC2.2);
 \item L’utente visualizza i valori inerenti allo scadere (UC2.3);
-
-
 \end{itemize}
+\end{figure}
 
 
+\begin{figure}[h!]
+\subsection{Gli spediti}
+   \begin{center}
+    \includegraphics[scale=0.4]{usecase/UseCase_Diagram4} 
+    \caption{Use Case - UC3: Scenario dello spedito}
+    \end{center}
 
-
-Gli spediti \\\\
-
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.0\columnwidth]{usecase/UseCase_Diagram4} 
-    \caption{Use Case - UC0: Scenario principale}
-\end{figure} 
 
 \textbf{Attori primari:} Utente generico ed utente amministratore autenticati
 \\
-
-
 \textbf{Descrizione:}  L’utente (generico oppure amministratore) può scegliere di visualizzare l’ammontare dello “spedito oggi”, dello “spedito ieri” oppure “spedito questo mese”.  \\
 
 \textbf{Precondizione:} Il sistema funziona correttamente e visualizza la pagina per poter visualizzare gli spediti correttamente. \\
@@ -172,15 +172,16 @@ Gli spediti \\\\
 \item L’utente visualizza i valori inerenti allo spedito questo mese (UC3.3);
 
 \end{itemize}
+\end{figure}
 
 
-Scadenzario \\\\
 
-\begin{figure}[!h] 
-    \centering 
-    \includegraphics[width=1.0\columnwidth]{usecase/UseCase_Diagram5} 
-    \caption{Use Case - UC0: Scenario principale}
-\end{figure} 
+\begin{figure}[h!]
+\subsection{Scadenzario}
+   \begin{center}
+    \includegraphics[scale=0.4]{usecase/UseCase_Diagram5} 
+    \caption{Use Case - UC6: Scaduti/A scadere}
+    \end{center}
 
 \textbf{Attori primari:} Utente generico ed utente amministratore autenticati
 \\
@@ -200,19 +201,19 @@ Scadenzario \\\\
 \item L’utente scarica il report inerente agli scaduti  (UC6.2);
 \item L’utente scarica il report inerente allo scadere (UC6.3);
 \end{itemize}
+\end{figure}
 
 
-
+\clearpage
 \begin{table}
-\caption{Tabella del tracciamento dei requisiti qualitativi}
+\begin{center}
+\textbf{Tabella con requisiti funzionali}
+\end{center}
+
 \label{tab:requisiti-qualitativi}
-
-
 \begin{tabular}{ |p{2cm}|p{8cm}|p{2cm}| }
-
  \hline
 \textbf{ Requisito}   &  \textbf{Descrizione}    &  \textbf{    Use Case} \\ 
-
  \hline
   RF-0 &   L’attore può visualizzare la pagina principale per poter scegliere uno delle funzionalità presenti   & UC0 \\
  \hline
@@ -263,13 +264,17 @@ RF-22   &  L’attore può visualizzare le licenze degli utenti & UC7.7 \\
 RF-23   & L’attore può inserire una  licenza  & UC7.8 \\
 \hline
 \end{tabular}
+\\
+\caption{Tabella del tracciamento dei requisiti funzionali}
 \end{table}
 
-Tabella con requisiti qualitativi \\
 
+
+\begin{table}
+\begin{center}
+\textbf{Tabella con requisiti qualitativi}
+\end{center}
 \begin{tabular}{ |p{2cm}|p{8cm}|p{2cm}| }
- 
-
  \hline
 \textbf{ Requisito}   &  \textbf{Descrizione}    &  \textbf{    Use Case} \\ 
 \hline
@@ -278,15 +283,18 @@ RQ-1  &  Il codice sviluppato deve essere versionato con il sistema RTC integrat
 RQ-2 &  Si deve usare il software Kettle per la gestione ETL & Azienda \\
 \hline
 \end{tabular}
-\\ \\ \\ \\
+\\
+\caption{Tabella con requisiti qualitativi}
+\end{table}
 
-Tabella con i vincoli \\
 
 
 
+\begin{table}
+\begin{center}
+\textbf{Tabella dei vincoli}
+\end{center}
 \begin{tabular}{ |p{2cm}|p{8cm}|p{2cm}| }
- 
-
  \hline
 \textbf{ Requisito}   &  \textbf{Descrizione}    &  \textbf{    Use Case} \\ 
 \hline
@@ -300,7 +308,9 @@ RV-3 &  La logica di BI deve essere sviluppata come web-services sul server Java
 RV-4 & Come DBMS si deve usare PostgresSQL & Azienda \\
 \hline
 \end{tabular}
-
+\\
+\caption{Tabella dei vincoli}
+\end{table}
 
 
 
