@@ -7,7 +7,7 @@
 \label{cap:definizione-problema}
 %**************************************************************
 
-\intro{Il terzo capitolo descrive in breve i motivi ed alcuni problemi legati alla necessitaà di un sistema portabile, della trasformazione dei dati e delle notifiche in tempo reale.}\\
+\intro{Il terzo capitolo descrive in breve i motivi ed alcuni problemi legati alla necessità di un sistema portabile, della trasformazione dei dati e delle notifiche in tempo reale.}\\
 
 %**************************************************************
 
@@ -16,7 +16,7 @@
 \section{Sempre più portabilità}
 
 
-Quando le attività da gestire in un'azienda diventano tante, si ha la necessità di tenerle sotto controllo molte volte durante la giornata e questo purtroppo richiede quasi sempre un PC o tablet per poterci accedere attraverso una pagina web. Questo problema lo ritroviamo in tanti altri sistemi dove si richiede l'utilizzo di un'interfaccia web per interagire. Eliminando l'interfaccia web sostituendola con un applicazione installabile a volte non è la soluzione migliore perché questo significa dover fornire una compatibilità a tutte le piattaforme e sistemi operativi disponibili altrimenti si  limiterebbe il supporto delle funzionalità solo su una specifica piattaforma o sistema operativo. Bisognerebbe quindi trovare un modo per rendere l'applicativo un'applicazione portabile, cioè senza il bisogno dell'installazione e questo problema viene affrontato nel prossimo capito.
+Quando le attività da gestire in un'azienda diventano tante, si ha la necessità di tenerle sotto controllo molte volte durante la giornata e questo purtroppo richiede quasi sempre un PC o tablet per poterci accedere attraverso una pagina web. Questo problema lo ritroviamo in tanti altri sistemi dove si richiede l'utilizzo di un'interfaccia web per interagire. Eliminando l'interfaccia web sostituendola con un applicazione installabile a volte non è la soluzione migliore perché questo significa dover fornire una compatibilità su tutte le piattaforme e sistemi operativi disponibili altrimenti si  limiterebbe il supporto delle funzionalità solo su una specifica piattaforma o sistema operativo. Bisognerebbe quindi trovare un modo per rendere l'applicativo un'applicazione portabile, cioè senza il bisogno dell'installazione e questo problema viene affrontato nel prossimo capito.
 
 \section{Il problema della notificazione}
 
@@ -31,11 +31,7 @@ Le aziende che si occupano di gestionale si trovano quasi sempre a gestire dati 
 
 \section{Trasformazione dei dati}
 Un altro problema da affrontare è quello di effettuare delle trasformazioni dei dati in altri formati. Spesso nei sistemi gestionali è richiesta una rappresentazione dei dati dal database in diversi formati come ad esempio in XML, Doc, PDF eccetera.  \\
-Come descritto nel prossimo capito questo problema vine affrontato con il sistema ETL, più specificamente verrà usato il software di PDI (Pentaho Data Integration) chiamto Kettle.
-
-
-
-
+Come descritto nel prossimo capito questo problema vine affrontato con il sistema ETL, più specificamente verrà usato il software di PDI (Pentaho Data Integration) chiamato Kettle.
 
 
 \section{Analisi del problema e soluzione}
@@ -44,7 +40,7 @@ Come descritto nel prossimo capito questo problema vine affrontato con il sistem
 \subsection{Studio iniziale del problema di portabilità}
 Dopo una attenta analisi per quanto riguarda il problema della portabilità dell'applicativo, è stato deciso sin dal primo tentativo di affiancare l'interfacci web esistente con una mobile. Questa decisione si basa sul fatto che avere un'interfaccia mobile è sempre comodo da usare e portare con se, dato che al giorno d'oggi, tutti possediamo uno smartphone personale sempre con noi. E' stata esclusa subito invece la possibilità di creare un'applicazione mobile da zero. Questo perchè come descritto nel primo capitolo si cerca di avere una soluzione capace di fornire un'applicativo dinamico, di facile utilizzo, che includa un sistema di notificazione per gli eventi preimpostati, che non abbia bisogno di essere installato e sopratutto che non abbia nessun tipo di dipendenza dal sistema operativo o browser.\\ 
  In secondo luogo è stata analizzata la possibilità di utilizzare una piattaforma già pronta open source che implementi un modulo di messaggistica chat, capace di ospitare il nostro sistema di notificazione attraverso l'invio di messaggi, evitando cosi di realizzare uno tutto da zero.\\\\
-Navigando su internet si trovano decine di chat application open source che possono andar bene al caso nosto. Tra le più utilizzate sono: \\\\
+Navigando su internet si trovano decine di chat application open source che possono andar bene al caso nostro. Tra le più utilizzate sono: \\\\
 
 \begin{itemize}
 \item Slack 
@@ -59,19 +55,19 @@ Navigando su internet si trovano decine di chat application open source che poss
 Valutando le funzionalità offerte dalla lista delle Chat Application è stato scelto Telegram come servizio di messaggistica di appoggio. Recentemente Telegram ha introdotto una nuova piattaforma per permettere agli sviluppatori di creare i Bot. I Bot sono degli account Telegram, gestiti da un programma, che offrono molteplici funzionalità con risposte immediate e completamente automatizzate. \\\\
 Uno dei motivi principali per cui è stata presa questa decisione è la guida completa e la dettagliata documentazione del codice sorgente fornita dai membri Telegram. Grazie ai numerosi sviluppatori e membri attivi telegram, è sempre più facile trovare una risposta ai problemi nei appositi forum oppure contattando direttamente i loro membri.\\ Telegram supporta lo sviluppo con la maggior parte dei linguaggi di programmazione tradizionali (non solo OOP), tra i quali Java. Questo ha reso ancora più facile la nostra scelta nel progetto. \\
 
-qui verrano aggiunti altri dettagli della scelta telegram .....
+qui verranno aggiunti altri dettagli della scelta telegram .....
 
 
 \subsection{Il problema dell'aggiornamento dei dati in real time}
 
-Per ovviare questo problema è stato deciso di realizzare degli script i quali fanno partire dei processi per aggiornare le tabelle di interesse sistematicamente in un orario prefisato. L'applicazione Kettle fornito dall'impresa Pentaho, è stato un tool programmabile molto utile nel gestire i processi di lettura ed aggiornamento delle tabelle. In queto modo i dati saranno aggiornati nel database dell'applicativo e poichè le operazione effettuate dall'utente sono prevalentemente di lettura (dall'interfaccia web invece non è cosi), il problema della mutua esclusione  non si presenta in questo scenario. 
+Per ovviare questo problema è stato deciso di realizzare degli script i quali fanno partire dei processi per aggiornare le tabelle di interesse sistematicamente in un orario prefissato. L'applicazione Kettle fornito dall'impresa Pentaho, è stato un tool programmabile molto utile nel gestire i processi di lettura ed aggiornamento delle tabelle. In questo modo i dati saranno aggiornati nel database dell'applicativo e poichè le operazione effettuate dall'utente sono prevalentemente di lettura (dall'interfaccia web invece non è cosi), il problema della mutua esclusione  non si presenta in questo scenario. 
 
 \subsection{L'associazione B2B - Telegram}
-Come vedremo nella progettazione le operazioni che andranno a scrivere sul database sono quelle che si occupano di creare un'associazione tra l'utente B2B e quello dell'account Telegram. Il database sul quale verrano memorizzati gli account degli utenti è diverso da quello che conterrà i dati del B2B. Questa separazione servirà per garantire un'identificazione univoca degli utenti B2B con quelli registrati con il Bot Telegram. Inoltre verrà utilizzato lo stesso database che si occupa della gestione degli utenti, per gestire anche le licenze e la loro validità per ciascun utente. In questo caso l'unico utente che modificherà e attiverà le licenze sarà l'utente amministratore per cui siamo sicuri che non si presenterà nessun problema di sincronizzazione e modifiche multiple da parte di più utenti. 
+Come vedremo nella progettazione le operazioni che andranno a scrivere sul database sono quelle che si occupano di creare un'associazione tra l'utente B2B e quello dell'account Telegram. Il database sul quale verranno memorizzati gli account degli utenti è diverso da quello che conterrà i dati del B2B. Questa separazione servirà per garantire un'identificazione univoca degli utenti B2B con quelli registrati con il Bot Telegram. Inoltre verrà utilizzato lo stesso database che si occupa della gestione degli utenti, per gestire anche le licenze e la loro validità per ciascun utente. In questo caso l'unico utente che modificherà e attiverà le licenze sarà l'utente amministratore per cui siamo sicuri che non si presenterà nessun problema di sincronizzazione e modifiche multiple da parte di più utenti. 
 
 \subsection{La  soluzione scelta per la trasformazione dei dati}
 
-Per quanto riguarda le trasformazioni ETL dei dati è stato scelto di utilizzare il software Kettle il quale è un software molto affidabile e presenta un'interfaccia molto intuitiva. Grazie a Kettle è stato possibile estrarre i dati dalla sorgentie gestionale ed elaborarli ulteriormente facendoli subire le trasformazioni desiderate. Le più comuni trasformazioni sono state: la normalizzazione dei dati, l'eliminazione dei duplicati, la derivazione dei nuovi calcolati, il raggruppamento degli stessi selezionando quelli di interesse eccetera. \\
+Per quanto riguarda le trasformazioni ETL dei dati è stato scelto di utilizzare il software Kettle il quale è un software molto affidabile e presenta un'interfaccia molto intuitiva. Grazie a Kettle è stato possibile estrarre i dati dalla sorgente gestionale ed elaborarli ulteriormente facendoli subire le trasformazioni desiderate. Le più comuni trasformazioni sono state: la normalizzazione dei dati, l'eliminazione dei duplicati, la derivazione dei nuovi calcolati, il raggruppamento degli stessi selezionando quelli di interesse eccetera. \\
 
 
 

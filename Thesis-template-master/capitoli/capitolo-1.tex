@@ -8,7 +8,7 @@
 %**************************************************************
 
 \intro{In questo capitolo viene presentata brevemente l'azienda Sanmarco Informatica S.p.A. presso cui è stato svolto lo stage e la necessità che ha fatto nascere l'idea di questo stage.\\
-Inoltre si presentano la struttura dei capitoli della tesi ed alcune norme tipografiche che verranno usate all’interno della stessa. }
+Inoltre si presentano la struttura dei capitoli della tesi ed alcune norme tipografiche che verranno usate all'interno della stessa. }
 
 %  \noindent Esempio di utilizzo di un termine nel glossario \\
 %\gls{api}. \\
@@ -20,10 +20,22 @@ Inoltre si presentano la struttura dei capitoli della tesi ed alcune norme tipog
 %citazione\footcite{womak:lean-thinking} \\
 
 %**************************************************************
-\section{L'azienda}
 
-Sanmarco Informatica nasce negli anni '80 come \textit{Software house\ped{G}} specializzata nello sviluppo di applicazioni gestionali per aziende manifatturiere ed è oggi una \textit{leading company} italiana nella progettazione e realizzazione di soluzioni a supporto della riorganizzazione di vari processi aziendali e professionali. L'ambizione e la volontà di rinnovarsi hanno permesso all'azienda di evolversi attraverso esperienze  e scelte imprenditoriali di successo, che individuano nella specializzazione del proprio capitale umano l'elemento centrale. L'azienda, partner di \textit{IBM Italia\ped{G}}, cresce grazie all'impegno di 320 persone fra dipendenti e collaboratori, 13 distributori e 4 sedi: Grisignano di Zocco (VI) come sede principale e Reggio Emilia (RE), Tavagnacco (UD) e Vimercate (MB) come filiali.
-Sanmarco Informatica è la prima ed unica azienda italiana entrata a far parte dell'\textit{Open Power Foundation IBM\ped{G}} e a gennaio 2016 ha ricevuto il riconoscimento internazionale \textit{Beacon Award} come finalisti a livello mondiale fra le aziende d'eccellenza che propongono soluzioni tecnologiche innovative in combinazione con il sistema \textit{Power\ped{G}} di IBM.
+
+\begin{figure}[h!]
+\section{L'azienda}
+   \begin{center}
+    \includegraphics[scale=0.3]{logo-smi}
+    \caption{Logo azienda Sanmarco Informatica}
+    \end{center}
+    Sanmarco Informatica nasce negli anni '80 come \textit{Software house} specializzata nello sviluppo di applicazioni gestionali per aziende manifatturiere ed è oggi una \textit{leading company} italiana nella progettazione e realizzazione di soluzioni a supporto della riorganizzazione di vari processi aziendali e professionali. L'ambizione e la volontà di rinnovarsi hanno permesso all'azienda di evolversi attraverso esperienze  e scelte imprenditoriali di successo, che individuano nella specializzazione del proprio capitale umano l'elemento centrale. L'azienda, partner di \textit{IBM Italia}, cresce grazie all'impegno di 320 persone fra dipendenti e collaboratori, 13 distributori e 4 sedi: Grisignano di Zocco (VI) come sede principale e Reggio Emilia (RE), Tavagnacco (UD) e Vimercate (MB) come filiali.
+Sanmarco Informatica è la prima ed unica azienda italiana entrata a far parte dell'\textit{Open Power Foundation IBM} e a gennaio 2016 ha ricevuto il riconoscimento internazionale \textit{Beacon Award} come finalisti a livello mondiale fra le aziende d'eccellenza che propongono soluzioni tecnologiche innovative in combinazione con il sistema \textit{Power} di IBM.
+
+    \end{figure}
+    
+
+
+
 
 
 
@@ -31,9 +43,11 @@ Sanmarco Informatica è la prima ed unica azienda italiana entrata a far parte d
 %**************************************************************
 \section{L'idea}
 
-L'idea di base del progetto di stage si basa sulla necessità di alcune aziende di gestire in maniera più efficiente ed immediata i loro ordini giornalieri, la disponibilità degli articoli, gli scadenzari, gli incassi ed altri processi. Questo acquisisce ancora maggiore importanza laddove l'azienda in questione disponga di un numero elevato di rappresentanti ed ognuno di questi dovrà gestire i punti descriti sopra in base al proprio ruolo aziendale. \\ \\
 
-NextBI, che è uno dei team dell'azienda Sanmarco Informatica S.pA, offre attualmente una soluzione (che si sta espandendo con altre funzionalità) a questo problema, interrogando il database  gestionale e sucessivamente impaginando il risultato su una pagina web. Nasce così la neccessità di affiancare l'applicativo web con un sistema di BI, il quale dovrà interaggiare con il front-end, rappresentabile mediante un'interfaccia mobile portabile, dinamica e di facile intuizione. L'ide nasce quindi anche dall'opportunità di poter gestire l'abilitazione dell'applicativo con le loro licenze, agli utenti desiderati in modo rapido senza effettuare tante operazioni. Nel automatizzare questa funzionalità sorge la necessità di studiare una soluzione nella quale tutta la parte di autenticazione per categoria di utenti venga gestita in maniera imediata, più dinamica e rapida senza il bisogno quindi di accedere a pagine web, ovviando cosi la necessità di autenticazione ripetuta.
+
+L'idea di base del progetto di stage si basa sulla necessità di alcune aziende di gestire in maniera più efficiente ed immediata i loro ordini giornalieri, la disponibilità degli articoli, gli scadenzari, gli incassi ed altri processi. Questo acquisisce ancora maggiore importanza laddove l'azienda in questione disponga di un numero elevato di rappresentanti ed ognuno di questi dovrà gestire quanto descritto sopra in base al proprio ruolo aziendale. \\ \\
+
+NextBI, che è uno dei team dell'azienda Sanmarco Informatica S.p.A, offre attualmente una soluzione (che si sta espandendo con altre funzionalità) a questo problema, interrogando il database  gestionale e successivamente presentando il risultato su una pagina web. Nasce così la necessità di affiancare l'applicativo web con un sistema BI, il quale dovrà interagire con il front-end, rappresentabile mediante un'interfaccia mobile portabile, dinamica e di facile intuizione. L'idea nasce anche dall'opportunità di poter gestire le  licenze dell'applicativo agli utenti desiderati in modo rapido, senza effettuare tante operazioni. Nel automatizzare questa funzionalità sorge la necessità di studiare una soluzione nella quale tutta la parte di autenticazione degli utenti venga gestita in modo più immediata, dinamica e rapida, senza il bisogno quindi di accedere ogni volta a pagine web per effettuare l'autenticazione.
 
 %**************************************************************
 \section{Organizzazione del testo}
@@ -41,13 +55,13 @@ NextBI, che è uno dei team dell'azienda Sanmarco Informatica S.pA, offre attual
 \begin{description}
     \item[{\hyperref[cap:processi-metodologie]{Il secondo capitolo}}] descrive con maggiore attenzione i dettagli dello stage. Specifica con più precisione la necessità a cui rispondere ai requisiti e gli obiettivi previsti, le tecnologie usate e la pianificazione prevista;
     
-    \item[{\hyperref[cap:definizione-problema]{Il terzo capitolo}}] descrive in breve i motivi ed alcuni problemi legati alla necessitaà di un sistema portabile, della trasformazione dei dati e delle notifiche in tempo reale.
+    \item[{\hyperref[cap:definizione-problema]{Il terzo capitolo}}] descrive in breve i motivi ed alcuni problemi legati alla necessità di un sistema portabile, della trasformazione dei dati e delle notifiche in tempo reale.
     
-    \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] descrive in maggiore dettaglio il lavoro eseguito durante lo stage, le varie soluzioni che sono state testate e come queste sono state scelte e composte per progettare la soluzione ideale.
+    \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] descrive in maggiore dettaglio il lavoro eseguito durante lo stage, le varie soluzioni che sono state considerate e come queste sono state scelte e composte per progettare la soluzione ideale.
     
     \item[{\hyperref[cap:progettazione-codifica]{In quinto capitolo}}] descrive le principali scelte tecnologiche, la struttura del database,la struttura server-side dell'applicativo, il modello Long Polling implementato da Telegram e la struttura client-side dell'applicativo.
     
-    \item[{\hyperref[cap:conclusioni]{Questo è il capitolo}}] conclusivo dove vengono descritte le relazioni finali dell'esperienza dello stage presso l'azienda Sanmarco Informatica S.p.A. Sarà mostrato un riassunto generale che comprende gli obiettivi del progetto di stage, una descrizione delle conoscenze acquisite durante questo perido ed infine una valutazione personale riguardo l'intera esperienza di stage presso l'azienda. 
+    \item[{\hyperref[cap:conclusioni]{Questo è il capitolo}}] conclusivo dove vengono descritte le relazioni finali dell'esperienza dello stage presso l'azienda Sanmarco Informatica S.p.A. Sarà mostrato un riassunto generale che comprende gli obiettivi del progetto di stage, una descrizione delle conoscenze acquisite durante questo periodo ed infine una valutazione personale riguardo l'intera esperienza di stage presso l'azienda. 
 \end{description}
 
 Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
