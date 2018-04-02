@@ -7,18 +7,19 @@
 \label{cap:definizione-problema}
 %**************************************************************
 
-\intro{Il terzo capitolo descrive in breve i motivi ed alcuni problemi legati alla necessità di un sistema portabile, della trasformazione dei dati e delle notifiche in tempo reale.}\\
+Il terzo capitolo descrive in breve i motivi ed alcuni problemi legati alla necessità di un sistema portabile, della trasformazione dei dati e delle notifiche in tempo reale.\\
 
 %**************************************************************
 
 
 %**************************************************************
-\section{Sempre più portabilità}
+\section{Problemi da affrontare}
+Le sottosezioni seguenti descrivono alcuni problemi fondamentali da tenere in considerazione per poter evitare rallentamenti indesiderati nella fase di progettazione.
 
-
+\subsection{Sempre più portabilità}
 Quando le attività da gestire in un'azienda diventano tante, si ha la necessità di tenerle sotto controllo molte volte durante la giornata e questo purtroppo richiede quasi sempre un PC o tablet per poterci accedere attraverso una pagina web. Questo problema lo ritroviamo in tanti altri sistemi dove si richiede l'utilizzo di un'interfaccia web per interagire. Eliminando l'interfaccia web sostituendola con un applicazione installabile a volte non è la soluzione migliore perché questo significa dover fornire una compatibilità su tutte le piattaforme e sistemi operativi disponibili altrimenti si  limiterebbe il supporto delle funzionalità solo su una specifica piattaforma o sistema operativo. Bisognerebbe quindi trovare un modo per rendere l'applicativo un'applicazione portabile, cioè senza il bisogno dell'installazione e questo problema viene affrontato nel prossimo capito.
 
-\section{Il problema della notificazione}
+\subsection{Il problema della notificazione}
 
 Nell'applicativo preesistente non è presente  la possibilità di notificare l'utente in tempo reale quando succede qualcosa su un certo evento programmato.  Questa estensione sarebbe molto apprezzata nel nuovo applicativo. Fornire un sistema di notificazione significa creare degli eventi e restare in ascolto su di essi finché non succeda qualcosa per scaturire l'evento. \\
 
@@ -26,10 +27,10 @@ Negli ultimi tempi di internet, queste funzionalità hanno preso piede in divers
 Questo tipo di notifiche sono molto interessanti per diverse tipologie di applicazioni web ma il primo problema da affrontare con le applicazioni web è la compatibilità delle “Notifications API”  con i vecchi  browser essendo le Notifications API una tecnologia relativamente recente. Anche questo problema sarà affrontato nel prossimo capitolo.
 
 
-\section{L'aggiornamento in real time}
+\subsection{L'aggiornamento in real time}
 Le aziende che si occupano di gestionale si trovano quasi sempre a gestire dati molto importanti e sensibili di altre aziende. Per questo motivo il software gestionale limita l'accesso e modifica dei dati nel database secondo la propria politica di gestione. Per poter interfacciarsi con questo problema bisogna trovare un sistema che faccia una specie di "backup" delle tabelle di interesse del gestionale sul quale effettuarci le query e successivamente riportarle nel database gestionale di origine. A questo punto si presenta un problema fondamentale: cioè capire ogni quanto tempo bisogna fare l'aggiornamento delle tabelle dal database gestione. Questo problema influisce direttamente sulle performance dell'applicativo poichè, come specificato sopra, i dati devono essere aggiornati il più possibile nel momento in cui si effettua una richiesta dall'interfaccia utente. Ma dall'altra parte, aggiornando le tabelle ogni secondo richiederebbe tanta velocità di calcolo e rischio di deformazione dei dati. Bisogna dunque trovare un compromesso ragionevole. 
 
-\section{Trasformazione dei dati}
+\subsection{Trasformazione dei dati}
 Un altro problema da affrontare è quello di effettuare delle trasformazioni dei dati in altri formati. Spesso nei sistemi gestionali è richiesta una rappresentazione dei dati dal database in diversi formati come ad esempio in XML, Doc, PDF eccetera.  \\
 Come descritto nel prossimo capito questo problema vine affrontato con il sistema ETL, più specificamente verrà usato il software di PDI (Pentaho Data Integration) chiamato Kettle.
 

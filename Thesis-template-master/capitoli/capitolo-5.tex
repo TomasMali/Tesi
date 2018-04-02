@@ -197,10 +197,10 @@ In questa sottosezione vengono descritti i servizi chiamati per creare e gestire
 \end{itemize}
 
 \subsection{DAO}
-Lo strato DAO fondamentalmente ha una classe con relativi metodi che rappresenta
+Lo strato \gls{DAO} fondamentalmente ha una classe con relativi metodi che rappresenta
 un'entità tabellare di un database e viene utilizzato per stratificare e isolare l'accesso
 ad una tabella tramite query, che nel nostro caso sono costruite con una struttura Java
-o interfacciandosi direttamente con il DAO. L'accesso al data-layer da parte della
+o interfacciandosi direttamente con il DAO. L'accesso al \gls{data-layer} da parte della
 business-logic viene quindi controllato tramite DAO, creando un maggiore livello di
 astrazione ed una più facile manutenibilità. I metodi del DAO con le rispettive query
 verranno così richiamati dalle classi della business-logic.
