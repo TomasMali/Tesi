@@ -7,8 +7,8 @@
 \label{cap:progettazione-codifica}
 %**************************************************************
 
-\intro{
-In questo capitolo vengono descritte le principali scelte progettuali, la struttura del database, la struttura del server e dell'applicativo client-side.}\\
+
+In questo capitolo vengono descritte le principali scelte progettuali, la struttura del database, la struttura del server e dell'applicativo client-side.
 
 %**************************************************************
 %\section{Tecnologie e strumenti}
@@ -25,12 +25,13 @@ In questo capitolo vengono descritte le principali scelte progettuali, la strutt
 %**************************************************************
 
 
-\begin{figure}[h!]
+
 \section{Database}
 \label{sec:database}
 
-Per gestire l'area di amministrazione degli utenti è stato costruito il database locale di amministrazione chiamato "data", appunto perché dovrà rappresenta tutti i dati amministrativi dell'utente, la gestione dell'associazione tra utenti b2b con quelli di telegram, le licenze degli utenti e tutta la gestione della tastiera telegram. La creazione e la  gestione della tastiera di telegram è automatizzata dalla tabella Keyboard, ovvero per creare un nuovo tasto associato ad una funzionalità, bisogna semplicemente scrivere sulla tabella Keyboard il nome del tasto, su quale riga si vuole posizionare e il nome del metodo che verrà chiamato quando si preme quel bottone. Questo sistema di gestione di tastiera è molto comodo per tenere una separazione tra i vari componenti che implementano una logica diversa. In questo modo è molto facile estendere l'applicativo con altre funzionalità modificando semplicemente una sola riga del database. 
-
+Per gestire l'area di amministrazione degli utenti è stato costruito il database locale di amministrazione chiamato "data",dato che dovrà rappresenta tutti i dati amministrativi dell'utente, la gestione dell'associazione tra utenti b2b con quelli di telegram, le licenze degli utenti e tutta la gestione della tastiera telegram. La creazione e la  gestione della tastiera di telegram è automatizzata dalla tabella Keyboard, ovvero per creare un nuovo tasto associato ad una funzionalità, bisogna semplicemente scrivere sulla tabella Keyboard il nome del tasto, su quale riga si vuole posizionare e il nome del metodo che verrà chiamato quando si preme quel bottone. Questo sistema di gestione di tastiera è molto comodo per tenere una separazione tra i vari componenti che implementano una logica diversa. In questo modo è molto facile estendere l'applicativo con altre funzionalità modificando semplicemente una sola riga del database. 
+\clearpage
+\begin{figure}[h!]
    \begin{center}
      \includegraphics[scale=0.4]{diagrammi/database} 
     \caption{ER-Database }
@@ -39,6 +40,8 @@ Per gestire l'area di amministrazione degli utenti è stato costruito il databas
 \subsection{Struttura}
 In questa sottosezione verranno elencate tutte le tabelle che rappresentano la gestione dell'area amministrativa, spiegando il loro uso e funzionamento in modo da comprendere l'utilizzo che ne è stato fatto nel progetto per il salvataggio dei dati. \\
 \end{figure}
+
+
 \textbf{User} \\ 
 
 In questa tabella vengono salvati i dati anagrafici dell'utente telegram,il suo ID identificativo univoco e il suo ruolo aziendale. \\
@@ -129,7 +132,7 @@ La tabella Keyboard presenta i seguenti campi:\\
 
 \end{figure}  
 
-
+\clearpage
 
 
 
@@ -206,7 +209,7 @@ astrazione ed una più facile manutenibilità. I metodi del DAO con le rispettiv
 verranno così richiamati dalle classi della business-logic.
 
 
-\clearpage
+
 \section{Front-end}
 
 La parte Front-end di telegram è costituita principalmente dal menù principale che contiene i bottoni della tastiera, l'area di composizione del messaggio da inviare e l'area che visualizza la history della chat. In questa sezione si cerca di dare una panoramica generale di quelli che sono i componenti principali che compongono la tastiera interattiva dell'utente e i passi da seguire per poter portare a termine correttamente un operazione. Le figure saranno affiancate da una descrizione che illustra il funzionamento di vari componenti. 
