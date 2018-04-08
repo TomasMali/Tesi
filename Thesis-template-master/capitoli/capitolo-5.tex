@@ -1,36 +1,33 @@
-% !TEX encoding = UTF-8
-% !TEX TS-program = pdflatex
-% !TEX root = ../tesi.tex
 
-%**************************************************************
-\chapter{Progettazione e codifica}
+
+\clearpage
 \label{cap:progettazione-codifica}
-%**************************************************************
+
+
+
+\chapter{Progettazione e codifica}
+
+
 
 
 In questo capitolo vengono descritte le principali scelte progettuali, la struttura del database, la struttura del server e dell'applicativo client-side.
 
-%**************************************************************
-%\section{Tecnologie e strumenti}
-%\label{sec:tecnologie-strumenti}
 
-%Di seguito viene data una panoramica delle tecnologie e strumenti utilizzati.
-
-%\subsection*{Tecnologia 1}
-%Descrizione Tecnologia 1.
-
-%\subsection*{Tecnologia 2}
-%Descrizione Tecnologia 2
-
-%**************************************************************
-
-
+\begin{figure}[h]
+   \begin{center}
+     \includegraphics[scale=0.4]{diagrammi/Architettura_Sistema} 
+    \caption{Architettura di Sistema }
+    \end{center}
+\end{figure}
+\clearpage
 
 \section{Database}
 \label{sec:database}
 
 Per gestire l'area di amministrazione degli utenti è stato costruito il database locale di amministrazione chiamato "data",dato che dovrà rappresenta tutti i dati amministrativi dell'utente, la gestione dell'associazione tra utenti b2b con quelli di telegram, le licenze degli utenti e tutta la gestione della tastiera telegram. La creazione e la  gestione della tastiera di telegram è automatizzata dalla tabella Keyboard, ovvero per creare un nuovo tasto associato ad una funzionalità, bisogna semplicemente scrivere sulla tabella Keyboard il nome del tasto, su quale riga si vuole posizionare e il nome del metodo che verrà chiamato quando si preme quel bottone. Questo sistema di gestione di tastiera è molto comodo per tenere una separazione tra i vari componenti che implementano una logica diversa. In questo modo è molto facile estendere l'applicativo con altre funzionalità modificando semplicemente una sola riga del database. 
-\clearpage
+
+
+
 \begin{figure}[h!]
    \begin{center}
      \includegraphics[scale=0.4]{diagrammi/database} 
